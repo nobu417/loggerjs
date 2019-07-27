@@ -6,7 +6,7 @@ class loggerjs {
         if ( colors.debug === undefined ) { colors.debug = 'blue'; }
         if ( colors.error === undefined ) { colors.error = 'red'; }
         if ( colors.warn === undefined ) { colors.warn = 'orange'; }
-        if ( colors.info === undefined ) { colors.info = 'blue'; }
+        if ( colors.info === undefined ) { colors.info = 'green'; }
         
         this.colors = {
             debug: colors.debug,
