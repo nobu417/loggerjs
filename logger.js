@@ -1,13 +1,21 @@
 class loggerjs {
-    constructor ( env = 'development', colorDebug = 'blue', colorError = 'red', colorWarn = 'orange', colorInfo = 'green' ) {
+    constructor ( env = 'development', colors = {} ) {
+        self = this;
         this.env = env;
+        
+        if ( colors.debug === undefined ) { colors.debug = 'blue'; }
+        if ( colors.error === undefined ) { colors.error = 'red'; }
+        if ( colors.warn === undefined ) { colors.warn = 'orange'; }
+        if ( colors.info === undefined ) { colors.info = 'blue'; }
+        
         this.colors = {
-            debug: colorDebug,
-            error: colorError,
-            warn: colorWarn,
-            info: colorInfo
+            debug: colors.debug,
+            error: colors.error,
+            warn: colors.warn,
+            info: colors.info
         }
     }
+    
     logger ( data, sender = null , level = 'debug' ) {
         // Not to work logger if application environment is not development.
         if ( this.env != 'development' ) {
